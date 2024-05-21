@@ -119,7 +119,11 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 
 -- Save undo history
+local undo_dir = vim.fn.stdpath 'data' .. '/undo'
+vim.opt.undodir = undo_dir
 vim.opt.undofile = true
+vim.opt.undolevels = 1000
+vim.opt.undoreload = 10000
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
