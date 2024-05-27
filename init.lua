@@ -664,7 +664,7 @@ require('lazy').setup({
         -- javascript = { { "prettierd", "prettier" } },     formatters_by_ft = {
         css = { 'prettierd', 'prettier' },
         javascript = { 'prettierd', 'prettier' },
-        json = { 'prettierd', 'prettier' },
+        json = { 'jq' },
         markdown = { 'prettierd', 'prettier' },
         python = { 'black', 'isort' },
       },
