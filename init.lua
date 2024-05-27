@@ -897,6 +897,11 @@ require('lazy').setup({
     end,
   },
 
+  { -- Twilight dims inactive portions of the code you're editing using TreeSitter
+    'folke/twilight.nvim',
+    opts = {},
+  },
+
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
