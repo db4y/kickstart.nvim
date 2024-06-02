@@ -707,12 +707,14 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
+      'onsails/lspkind.nvim',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+      local lspkind = require 'lspkind'
 
       cmp.setup {
         snippet = {
@@ -773,6 +775,13 @@ require('lazy').setup({
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+        },
+        formatting = {
+          fields = { 'kind', 'abbr', 'menu' },
+          expandable_indicator = true,
+          format = lspkind.cmp_format {
+            symbol_map = { Codeium = '' },
+          },
         },
         sources = {
           { name = 'nvim_lsp' },
