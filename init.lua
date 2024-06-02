@@ -262,6 +262,22 @@ require('lazy').setup({
     },
   },
 
+  -- Gitmojis for Neovim using nvim-cmp
+  { -- https://github.com/Dynge/gitmoji.nvim
+    'Dynge/gitmoji.nvim',
+    dependencies = {
+      'hrsh7th/nvim-cmp',
+    },
+    opts = {
+      filetypes = { 'gitcommit' },
+      completion = {
+        append_space = false,
+        complete_as = 'emoji',
+      },
+    },
+    ft = 'gitcommit',
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -789,6 +805,7 @@ require('lazy').setup({
           { name = 'path' },
           { name = 'buffer' },
           { name = 'codeium' },
+          { name = 'gitmoji' },
         },
       }
     end,
